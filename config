@@ -1,10 +1,11 @@
 
 #autostart terminal
 exec terminator
+exec "python2 /home/sean/Programs/Python/dev/clock.py"
 
 
 #Set mod key
-set $mod Mod1
+set $mod Mod4
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -37,22 +38,41 @@ bindsym F11 fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 #i3lock
-bindsym Control+l exec "python2 /home/sean/Programs/Python/lock_script.py"
+bindsym Control+l exec "play /home/sean/Programs/Python/computerbeep_11.mp3;python2 /home/sean/Programs/Python/lock_script.py"
 
 #clock
-bindsym Control+t exec "python2 /home/sean/Programs/Python/dev/clock.py"
+bindsym --release $mod+Shift+minus exec "play /home/sean/Programs/Python/computerbeep_3.mp3"
+bindsym $mod+Shift+minus move scratchpad
+bindsym Control+t [title="seanclock"] scratchpad show
+bindsym --release Control+t exec "play /home/sean/Programs/Python/computerbeep_9.mp3"
+#bindsym Control+t exec "python2 /home/sean/Programs/Python/dev/clock.py"
+
+#activate vga
+bindsym $mod+d exec "xrandr --output VGA1 --auto;xrandr --output LVDS1 --off;nitrogen --restore"
+#deactivate vga
+bindsym $mod+Shift+d exec "xrandr --output VGA1 --off;xrandr --output LVDS1 --mode 1366x768;nitrogen --restore"
 
 
 # switch to workspace
+bindsym --release $mod+1 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+1 workspace 1
+bindsym --release $mod+2 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+2 workspace 2
+bindsym --release $mod+3 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+3 workspace 3
+bindsym --release $mod+4 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+4 workspace 4
+bindsym --release $mod+5 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+5 workspace 5
+bindsym --release $mod+6 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+6 workspace 6
+bindsym --release $mod+7 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+7 workspace 7
+bindsym --release $mod+8 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+8 workspace 8
+bindsym --release $mod+9 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+9 workspace 9
+bindsym --release $mod+0 exec "play /home/sean/Programs/Python/computerbeep_5.mp3"
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
@@ -69,6 +89,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 
 # reload the configuration file
+bindsym --release $mod+Shift+c exec "play /home/sean/Programs/Python/computerbeep_68.mp3"
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart

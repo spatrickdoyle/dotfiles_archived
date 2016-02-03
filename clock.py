@@ -6,9 +6,9 @@ pygame.init()
 global screen
 screen = pygame.display.set_mode((501,301))
 
-font1 = pygame.font.SysFont(u'ubuntumono',90)
-font2 = pygame.font.SysFont(u'ubuntumono',30)
-font3 = pygame.font.SysFont(u'ubuntumono',30,False,True)
+font1 = pygame.font.SysFont(u'Trebuchet MS',90)
+font2 = pygame.font.SysFont(u'Trebuchet MS',30)
+font3 = pygame.font.SysFont(u'Trebuchet MS',30,False,True)
 
 w,h = 100,100
 bat_icons = [pygame.transform.scale(foShizzle.imageLoad("/home/sean/Programs/Python/dev/battery1.png"),(w,h)),pygame.transform.scale(foShizzle.imageLoad("/home/sean/Programs/Python/dev/battery2.png"),(w,h)),pygame.transform.scale(foShizzle.imageLoad("/home/sean/Programs/Python/dev/battery3.png"),(w,h)),pygame.transform.scale(foShizzle.imageLoad("/home/sean/Programs/Python/dev/battery4.png"),(w,h))]

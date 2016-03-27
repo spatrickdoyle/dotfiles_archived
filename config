@@ -1,7 +1,10 @@
 
-#autostart terminal
+#autostart terminal and lemonbar
+exec lemonbar -B#00000000 -g 1366x35+0+0
+exec lemonbar -B#ff000000 -d -g 1332x20+15+15
+exec sleep 3
+exec python2 /home/sean/Programs/git-repos/dotfiles/desktop.py|lemonbar -B#ffffffff -d -g 1330x18+16+16 -F#000000 -f "trebuchet-10" -f "mono-9" -f "trebuchet-9"
 exec terminator
-exec "python2 /home/sean/Programs/git-repos/dotfiles/clock.py"
 
 
 #Set mod key
@@ -14,7 +17,7 @@ floating_modifier $mod
 
 #Set gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 17
+gaps inner 15
 
 
 #Focus mode
@@ -38,12 +41,6 @@ bindsym $mod+Shift+space floating toggle
 
 #i3lock
 bindsym Control+l exec "play /home/sean/Programs/git-repos/dotfiles/computerbeep_11.mp3;python2 /home/sean/Programs/git-repos/dotfiles/lock_script.py"
-
-#clock
-bindsym --release $mod+Shift+minus exec "play /home/sean/Programs/git-repos/dotfiles/computerbeep_3.mp3"
-bindsym $mod+Shift+minus move scratchpad
-bindsym Control+t [title="seanclock"] scratchpad show
-bindsym --release Control+t exec "play /home/sean/Programs/git-repos/dotfiles/computerbeep_9.mp3"
 
 #activate vga
 bindsym $mod+d exec "xrandr --output VGA1 --right-of LVDS1 --auto;nitrogen --restore"

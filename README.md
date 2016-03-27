@@ -11,5 +11,6 @@ lemonbar-xft-git
 terminator
 i3lock
 Python Imaging Library
-```<br/>
+```
+<br/>
 Paths will have to be changed

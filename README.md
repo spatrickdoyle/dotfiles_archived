@@ -1,16 +1,22 @@
 # dotfiles
-muh desktop config files<br/><br/>
-Dependancies:<br/>
+My desktop config files<br/><br/>
+Dependencies:<br/>
 ```
 nitrogen
 rofi
 xcompmgr
 i3-gaps
-python2
 lemonbar-xft-git
-terminator
+ttf-ms-fonts
+python2
+scrot
 i3lock
 Python Imaging Library
 ```
 <br/>
-Paths will have to be changed
+<br/>
+Applications that are also used but could be removed are: terminator, gksu, wicd, and pm-utils<br/>
+Sox is also used to play the mp3s when the keyboard shortcuts are used, which I think is cool, but could also be removed<br/>
+Also things like ping and xrandr and sed that are built in to linux systems are used<br/>
+I'm thinking about changing the lock script to something other than python, so that dependency might be removed<br/>
+Paths will have to be changed<br/>

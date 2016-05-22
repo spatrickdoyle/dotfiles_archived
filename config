@@ -1,10 +1,9 @@
 
 #autostart terminal and lemonbar
-exec lemonbar -B#00000000 -g 1366x35+0+0
-exec lemonbar -B#ff000000 -d -g 1332x20+15+15
-exec sleep 3
-exec python2 /home/sean/Programs/git-repos/dotfiles/desktop.py|lemonbar -B#ffffffff -d -g 1330x18+16+16 -F#000000 -f "trebuchet-10" -f "mono-9" -f "trebuchet-9"
+exec lemonbar -B#00000000 -g 1366x15+0+0
+exec /home/sean/Programs/git-repos/dotfiles/backend_script.sh|lemonbar -B#ffffffff -g 1366x20+0+0 -F#000000 -f "trebuchet-10" -f "mono-10" -f "mono-1" -u 1
 exec terminator
+exec gksu wicd
 
 
 #Set mod key
@@ -42,10 +41,15 @@ bindsym $mod+Shift+space floating toggle
 #i3lock
 bindsym Control+l exec "play /home/sean/Programs/git-repos/dotfiles/computerbeep_11.mp3;python2 /home/sean/Programs/git-repos/dotfiles/lock_script.py"
 
-#activate vga
-bindsym $mod+d exec "xrandr --output VGA1 --right-of LVDS1 --auto;nitrogen --restore"
+#activate HDMI
+bindsym $mod+d exec "xrandr --output HDMI1 --right-of LVDS1 --auto;nitrogen --restore"
 #deactivate vga
-bindsym $mod+Shift+d exec "xrandr --output VGA1 --off;nitrogen --restore"
+bindsym $mod+Shift+d exec "xrandr --output HDMI1 --off;nitrogen --restore"
+
+
+#rofi
+bindsym F12 exec "rofi -show run"
+bindsym Alt+Tab exec "rofi -show window"
 
 
 # switch to workspace

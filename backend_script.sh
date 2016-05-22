@@ -30,7 +30,7 @@ while :; do
 
 		((INDEX=${i:0:1}-1))
 
-		if [ $MONITOR = "VGA1" ]; then
+		if [ $MONITOR = "HDMI1" ]; then
 			DESKTOP_IND[$INDEX]="%{T2}x%{T1}"
 		elif [ $MONITOR = "LVDS1" ]; then
 			DESKTOP_IND[$INDEX]="%{T2}+%{T1}"

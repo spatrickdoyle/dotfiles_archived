@@ -1,6 +1,6 @@
 # dotfiles
 My desktop config files<br/><br/>
-![recent screenshot](https://raw.githubusercontent.com/thebonaestest/dotfiles/scrot.png)<br/>
+![recent screenshot](http://www.pokemonrevolution.me/scrot.png)<br/>
 Dependencies:<br/>
 ```
 nitrogen

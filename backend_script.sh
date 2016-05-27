@@ -32,7 +32,7 @@ while :; do
 
 		if [ $MONITOR = "HDMI1" ]; then
 			DESKTOP_IND[$INDEX]="%{T2}x%{T1}"
-		elif [ $MONITOR = "LVDS1" ]; then
+		elif [ $MONITOR = "eDP1" ]; then
 			DESKTOP_IND[$INDEX]="%{T2}+%{T1}"
 		fi
 		if [ $FOCUSED == "true" ]; then
@@ -68,7 +68,7 @@ while :; do
 		time_str=${time_str:1}
 	fi
 
-	echo "%{l #B000000}   %{T3}.%{B#ff000000 +u +o}.%{B#ffffff T1} "$DATE_STR"                                                                                                                                                                                                                                                                                                    %{c F#"$color_ping"}"${time_str}"%{r}"${DESKTOP_IND[0]}${DESKTOP_IND[1]}${DESKTOP_IND[2]}${DESKTOP_IND[3]}${DESKTOP_IND[4]}${DESKTOP_IND[5]}${DESKTOP_IND[6]}${DESKTOP_IND[7]}${DESKTOP_IND[8]}${DESKTOP_IND[9]}"  %{B#ff000000 -u -o T3}.%{B#00000000 T1}   %{F#000000}"
+	echo "%{l #B000000}   %{T3}.%{B#ff000000 +u +o}.%{B#ffffff T1} "$DATE_STR"                                                                                                                                                                                                                                                                                                                                                                  %{c F#"$color_ping"}"${time_str}"%{r}"${DESKTOP_IND[0]}${DESKTOP_IND[1]}${DESKTOP_IND[2]}${DESKTOP_IND[3]}${DESKTOP_IND[4]}${DESKTOP_IND[5]}${DESKTOP_IND[6]}${DESKTOP_IND[7]}${DESKTOP_IND[8]}${DESKTOP_IND[9]}"  %{B#ff000000 -u -o T3}.%{B#00000000 T1}   %{F#000000}"
 
 	sleep 0.1
 

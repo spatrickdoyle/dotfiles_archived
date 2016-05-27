@@ -1,5 +1,6 @@
 # dotfiles
 My desktop config files<br/><br/>
+![recent screenshot](https://raw.githubusercontent.com/thebonaestest/dotfiles/scrot.png)<br/>
 Dependencies:<br/>
 ```
 nitrogen

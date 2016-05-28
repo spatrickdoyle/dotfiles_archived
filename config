@@ -1,9 +1,6 @@
 
-#autostart terminal and lemonbar
-exec lemonbar -B#00000000 -g 1366x15+0+0
-exec /home/sean/Programs/git-repos/dotfiles/backend_script.sh|lemonbar -B#ffffffff -g 1366x20+0+0 -F#000000 -f "trebuchet-10" -f "mono-10" -f "mono-1" -u 1
-exec terminator
-exec gksu wicd
+#autostart stuff
+exec "$HOME/Programs/git-repos/dotfiles/i3rc"
 
 
 #Set mod key
@@ -39,17 +36,19 @@ bindsym F11 fullscreen toggle
 bindsym $mod+Shift+space floating toggle
 
 #i3lock
-bindsym Control+l exec "play /home/sean/Programs/git-repos/dotfiles/computerbeep_11.mp3;python2 /home/sean/Programs/git-repos/dotfiles/lock_script.py"
+bindsym Control+l exec "$HOME/Programs/git-repos/dotfiles/lock_script.sh"
 
 #activate HDMI
-bindsym $mod+d exec "xrandr --output HDMI1 --right-of LVDS1 --auto;nitrogen --restore"
-#deactivate vga
+bindsym $mod+d exec "xrandr --output HDMI1 --right-of eDP1 --auto;nitrogen --restore"
+#deactivate HDMI
 bindsym $mod+Shift+d exec "xrandr --output HDMI1 --off;nitrogen --restore"
 
+#volume keys
+bindsym F9 exec "amixer sset 'Master' 10%-;play /home/sean/Programs/git-repos/dotfiles/computerbeep_9.mp3"
+bindsym F10 exec "$HOME/Programs/git-repos/dotfiles/volume_up.sh"
 
 #rofi
-bindsym F12 exec "rofi -show run"
-bindsym Alt+Tab exec "rofi -show window"
+bindsym F12 exec "rofi -color-window '#ffffff, #000000, #000000' -color-normal '#ffffff, #000000, #ffffff, #7b7b7b, #ffffff' -color-active '#ffffff, #268bd2, #ffffff, #268bd2, #ffffff' -color-urgent '#ffffff, #dc322f, #ffffff, #dc322f, #ffffff' -show run"
 
 
 # switch to workspace

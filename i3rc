@@ -1,0 +1,4 @@
+lemonbar -B#00000000 -g 1920x15+0+0&
+$HOME/Programs/git-repos/dotfiles/backend_script.sh|lemonbar -B#ffffffff -g 1920x20+0+0 -F#000000 -f "trebuchet-12" -f "mono-12" -f "mono-1" -u 1&
+terminator&
+gksu wicd&

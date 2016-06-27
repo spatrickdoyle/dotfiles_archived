@@ -16,6 +16,14 @@ for_window [class="^.*"] border pixel 0
 gaps inner 15
 
 
+#tablet mode
+
+bindsym $mod+t exec "pkill lemonbar;pkill lemonbar;synclient TouchpadOff=1;easystroke& stalonetray& onboard& /home/sean/Programs/git-repos/dotfiles/tablet_backend.sh|lemonbar -g 1920x25+0+0 -f 'trebuchet-13'"; gaps inner all set 0#on
+
+bindsym $mod+Shift+t exec "pkill lemonbar;pkill stalonetray;pkill onboard;pkill easystroke;synclient TouchpadOff=0; /home/sean/Programs/git-repos/dotfiles/blank.sh|lemonbar -B#00000000 -g 1920x15+0+0& $HOME/Programs/git-repos/dotfiles/backend_script.sh|lemonbar -B#ffffffff -g 1920x20+0+0 -F#000000 -f 'trebuchet-12' -f 'mono-12' -f 'mono-1' -u 1&"; gaps inner all set 15#off
+
+#lemonbar: time date desktop volume brightness mode power
+
 #Focus mode
 focus_follows_mouse no
 
@@ -46,6 +54,10 @@ bindsym $mod+Shift+d exec "xrandr --output HDMI1 --off;nitrogen --restore"
 #volume keys
 bindsym F9 exec "amixer sset 'Master' 10%-;play /home/sean/Programs/git-repos/dotfiles/computerbeep_9.mp3"
 bindsym F10 exec "$HOME/Programs/git-repos/dotfiles/volume_up.sh"
+
+#brightness keys
+bindsym F2 exec "xbacklight -dec 10"
+bindsym F3 exec "xbacklight -inc 10"
 
 #rofi
 bindsym F12 exec "rofi -color-window '#ffffff, #000000, #000000' -color-normal '#ffffff, #000000, #ffffff, #7b7b7b, #ffffff' -color-active '#ffffff, #268bd2, #ffffff, #268bd2, #ffffff' -color-urgent '#ffffff, #dc322f, #ffffff, #dc322f, #ffffff' -show run"
@@ -95,6 +107,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -119,4 +132,4 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"    
+bindsym $mod+r mode "resize"

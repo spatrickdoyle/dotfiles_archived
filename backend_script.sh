@@ -62,13 +62,18 @@ while :; do
 	DESKTOP_IND[0]="%{F#"$color"}"${DESKTOP_IND[0]}
 	DESKTOP_IND[POWER]="%{F#ff0000}"${DESKTOP_IND[POWER]}
 
-	DATE_STR=$(date +"%A, %B %d, %Y")
+	DATE_STR=$(date +"%A, %B %e, %Y")
 	time_str=$(date +"%I:%M %p")
 	if [ ${time_str:0:1} = 0 ]; then
 		time_str=${time_str:1}
 	fi
 
 	echo "%{l #B000000}   %{T3}.%{B#ff000000 +u +o}.%{B#ffffff T1} "$DATE_STR"                                                                                                                                                                                                                                                                                                                                                                  %{c F#"$color_ping"}"${time_str}"%{r}"${DESKTOP_IND[0]}${DESKTOP_IND[1]}${DESKTOP_IND[2]}${DESKTOP_IND[3]}${DESKTOP_IND[4]}${DESKTOP_IND[5]}${DESKTOP_IND[6]}${DESKTOP_IND[7]}${DESKTOP_IND[8]}${DESKTOP_IND[9]}"  %{B#ff000000 -u -o T3}.%{B#00000000 T1}   %{F#000000}"
+
+	LID_STATE=$(cat /proc/acpi/button/lid/LID0/state | sed 's/state: *//')
+	if [ $LID_STATE = "closed" ]; then
+		sudo pm-suspend
+	fi
 
 	sleep 0.1
 

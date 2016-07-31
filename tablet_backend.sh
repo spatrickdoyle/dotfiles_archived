@@ -67,7 +67,7 @@ while :; do
 	VOLUME=$(amixer get Master |grep % |awk '{print $4}'|sed 's/[^0-9]//g')
 	BRIGHTNESS=$(xbacklight|sed 's/\..*//')
 
-	echo "     "$time_str"     "$DATE_STR"     %{A:i3lock:}DESKTOP: "$DESKTOP"%{A}     VOLUME: "$VOLUME"%     BRIGHTNESS: "$BRIGHTNESS"%     MODE: "TABLET"     POWER: "$POWER"%"
+	echo "     "$time_str"     "$DATE_STR"     %{A:desktop:}DESKTOP: "$DESKTOP"%{A}     %{A:volume:}VOLUME: "$VOLUME"%{A}     %{A:brightness:}BRIGHTNESS: "$BRIGHTNESS"%{A}     %{A:strange:}<<%{A}     %{A:charm:}>>%{A}     POWER: "$POWER"%"
 
 	LID_STATE=$(cat /proc/acpi/button/lid/LID0/state | sed 's/state: *//')
 	if [ $LID_STATE = "closed" ]; then
